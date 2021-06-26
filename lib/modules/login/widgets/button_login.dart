@@ -18,7 +18,7 @@ class ButtonLogin extends StatelessWidget {
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: [0, 8],
+                stops: [0, 0.8],
                 colors: const [Color(0xFFFCFFDF), Color(0xFFF2FE8D)]),
             borderRadius: BorderRadius.circular(38.0)),
         child: Text('Log in',

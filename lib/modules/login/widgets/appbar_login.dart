@@ -26,7 +26,7 @@ class AppBarLogin extends StatelessWidget with PreferredSizeWidget {
                 shape: BoxShape.circle,
                 color: const Color(0xFF363339),
               ),
-              child: Icon(Icons.more_vert, size: 15.w),
+              child: Icon(Icons.more_vert, size: 15),
             ),
           ]),
       preferredSize: Size.fromHeight(50),
