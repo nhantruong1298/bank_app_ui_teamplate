@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.transparent,
       bottomNavigationBar: CustomNavigationBar(
         onChangedIndex: (newIndex) {
           if (_isDemoMode) {

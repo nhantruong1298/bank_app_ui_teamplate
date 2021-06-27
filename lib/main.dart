@@ -27,7 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return ScreenUtilInit(
         designSize: Size(375, 812),
         builder: () => GetMaterialApp(
-              theme: ThemeData.light(),
               title: 'Bank App',
               defaultTransition: Transition.rightToLeft,
               transitionDuration: Duration(milliseconds: 300),

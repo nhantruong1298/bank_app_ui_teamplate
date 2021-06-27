@@ -24,21 +24,25 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20), topRight: Radius.circular(20))),
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      height: 82.h,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: List.generate(_listIcon.length, (index) {
-          return CustomNavigationBarItem(
-            onTap: () {
-              widget.onChangedIndex(index);
-            },
-            img: _listIcon[index],
-          );
-        }).toList(),
+      color: Colors.transparent,
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        height: 82.h,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(_listIcon.length, (index) {
+            return CustomNavigationBarItem(
+              onTap: () {
+                widget.onChangedIndex(index);
+              },
+              img: _listIcon[index],
+            );
+          }).toList(),
+        ),
       ),
     );
   }

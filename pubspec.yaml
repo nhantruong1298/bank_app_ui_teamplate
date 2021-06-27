@@ -29,6 +29,7 @@ dependencies:
   passcode_screen: ^2.0.0
   bloc:
   flutter_bloc:
+  money2: ^2.2.1
 
 
   # The following adds the Cupertino Icons font to your application.

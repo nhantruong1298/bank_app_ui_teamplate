@@ -24,7 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Colors.black,
         appBar: AppBar(
             backgroundColor: Colors.black,
             leading: Obx(() => _debugMode.value
@@ -34,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: 30.w,
                     height: 35.h,
                     child: CircleAvatar(
-                      radius: 18.w,
+                      radius: 16.w,
                       backgroundColor: const Color(0xFFF1FE87),
                       backgroundImage: AssetImage(
                         'assets/images/avatar.png',
@@ -61,9 +60,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Icon(Icons.more_vert, size: 15),
                     ))
             ]),
-        body: Container(
-          width: size.width,
-          height: size.height,
+        body: SafeArea(
+          // width: size.width,
+          // height: size.height,
           child: BlocBuilder<LoginBloc, LoginState>(
             bloc: _loginBloc,
             builder: (_, state) {
