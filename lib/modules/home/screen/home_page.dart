@@ -46,7 +46,6 @@ class _HomePageState extends State<HomePage> {
     var size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Container(
-          height: size.height,
           width: size.width,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -100,187 +99,317 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(height: 36.h),
                   ]),
             ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 35.h),
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        end: Alignment.topRight,
-                        colors: [
-                          Color(0xFF252525).withOpacity(0.9),
-                          Colors.black54,
-                          Color(0xFF252525).withOpacity(0.9),
-                        ]),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    )),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(children: [
-                        Icon(Icons.expand_more,
-                            size: 11.w, color: const Color(0xFF79767D)),
-                        SizedBox(width: 10.w),
-                        Text('Current loans'.toUpperCase(),
-                            style: TextStyle(
-                                fontSize: 10.sp, color: Colors.white)),
-                        Expanded(
-                            child: Container(
-                                alignment: Alignment.centerRight,
-                                child: Container(
-                                  width: 20.w,
-                                  height: 20.w,
-                                  decoration: BoxDecoration(
-                                      color: Color(0xFF363339),
-                                      borderRadius: BorderRadius.circular(20)),
-                                  child: Icon(Icons.add,
-                                      color: Colors.white, size: 12.w),
-                                )))
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 35.h),
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                      colors: [
+                        Color(0xFF252525).withOpacity(0.9),
+                        Colors.black54,
+                        Color(0xFF252525).withOpacity(0.9),
                       ]),
-                      SizedBox(height: 13.h),
-                      Container(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 22.h, horizontal: 20.w),
-                          width: ScreenUtil().screenWidth,
-                          height: 80.h,
-                          decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(26)),
-                          child: Row(children: [
-                            Container(
-                              padding: EdgeInsets.all(10.w),
-                              width: 32.w,
-                              height: 32.w,
-                              decoration: BoxDecoration(
-                                  color: Color(0xFFB2D0CE).withOpacity(0.85),
-                                  borderRadius: BorderRadius.circular(12)),
-                              child: Image.asset('assets/images/icon_card.png',
-                                  color: Colors.black),
-                            ),
-                            SizedBox(width: 12.w),
-                            Expanded(
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text('Account N*3874825',
-                                            style: TextStyle(
-                                                fontSize: 15.sp,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w400)),
-                                        Expanded(
-                                            child: Container(
-                                                alignment:
-                                                    Alignment.centerRight,
-                                                child: Text('$_usdSymbol 78,92',
-                                                    style: TextStyle(
-                                                        fontSize: 15.sp,
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.w400)))),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text('Expires 12/22/2023',
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: const Color(0xFF79767D),
-                                                fontWeight: FontWeight.w400)),
-                                        Expanded(
-                                            child: Container(
-                                                alignment:
-                                                    Alignment.centerRight,
-                                                child: Text('Rate 3.5%',
-                                                    style: TextStyle(
-                                                        fontSize: 12.sp,
-                                                        color: const Color(
-                                                            0xFF79767D),
-                                                        fontWeight:
-                                                            FontWeight.w400)))),
-                                      ],
-                                    )
-                                  ]),
-                            )
-                          ])),
-                      SizedBox(height: 16.h),
-                      Container(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 22.h, horizontal: 20.w),
-                          width: ScreenUtil().screenWidth,
-                          height: 80.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(26),
-                              gradient: LinearGradient(
-                                  begin: Alignment.topRight,
-                                  end: Alignment.bottomLeft,
-                                  colors: [
-                                    Color(0xFFEAEAEA),
-                                    Color(0xFFB2D0CE).withOpacity(0.85)
-                                  ])),
-                          child: Row(children: [
-                            Container(
-                              padding: EdgeInsets.all(10.w),
-                              width: 32.w,
-                              height: 32.w,
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(12)),
-                              child: Image.asset('assets/images/flash.png',
-                                  color: Colors.black),
-                            ),
-                            SizedBox(width: 12.w),
-                            Expanded(
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text('Account N*3874825',
-                                            style: TextStyle(
-                                                fontSize: 15.sp,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w400)),
-                                        Expanded(
-                                            child: Container(
-                                                alignment:
-                                                    Alignment.centerRight,
-                                                child: Text('$_usdSymbol 78,92',
-                                                    style: TextStyle(
-                                                        fontSize: 15.sp,
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.w400)))),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text('Expires 12/22/2023',
-                                            style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: const Color(0xFF79767D),
-                                                fontWeight: FontWeight.w400)),
-                                        Expanded(
-                                            child: Container(
-                                                alignment:
-                                                    Alignment.centerRight,
-                                                child: Text('Rate 3.5%',
-                                                    style: TextStyle(
-                                                        fontSize: 12.sp,
-                                                        color: const Color(
-                                                            0xFF79767D),
-                                                        fontWeight:
-                                                            FontWeight.w400)))),
-                                      ],
-                                    )
-                                  ]),
-                            )
-                          ]))
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  )),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(children: [
+                      Icon(Icons.expand_more,
+                          size: 11.w, color: const Color(0xFF79767D)),
+                      SizedBox(width: 10.w),
+                      Text('Current loans'.toUpperCase(),
+                          style:
+                              TextStyle(fontSize: 10.sp, color: Colors.white)),
+                      Expanded(
+                          child: Container(
+                              alignment: Alignment.centerRight,
+                              child: Container(
+                                width: 20.w,
+                                height: 20.w,
+                                decoration: BoxDecoration(
+                                    color: Color(0xFF363339),
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Icon(Icons.add,
+                                    color: Colors.white, size: 12.w),
+                              )))
                     ]),
-              ),
+                    SizedBox(height: 13.h),
+                    Container(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 22.h, horizontal: 20.w),
+                        width: ScreenUtil().screenWidth,
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(26)),
+                        child: Row(children: [
+                          Container(
+                            padding: EdgeInsets.all(7.w),
+                            width: 32.w,
+                            height: 32.w,
+                            decoration: BoxDecoration(
+                                color: Color(0xFFB2D0CE).withOpacity(0.85),
+                                borderRadius: BorderRadius.circular(12)),
+                            child: Image.asset('assets/images/icon_card.png',
+                                color: Colors.black),
+                          ),
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Account N*3874825',
+                                          style: TextStyle(
+                                              fontSize: 15.sp,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w400)),
+                                      Expanded(
+                                          child: Container(
+                                              alignment: Alignment.centerRight,
+                                              child: Text('$_usdSymbol 78,92',
+                                                  style: TextStyle(
+                                                      fontSize: 15.sp,
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w400)))),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text('Expires 12/22/2023',
+                                          style: TextStyle(
+                                              fontSize: 12.sp,
+                                              color: const Color(0xFF79767D),
+                                              fontWeight: FontWeight.w400)),
+                                      Expanded(
+                                          child: Container(
+                                              alignment: Alignment.centerRight,
+                                              child: Text('Rate 3.5%',
+                                                  style: TextStyle(
+                                                      fontSize: 12.sp,
+                                                      color: const Color(
+                                                          0xFF79767D),
+                                                      fontWeight:
+                                                          FontWeight.w400)))),
+                                    ],
+                                  )
+                                ]),
+                          )
+                        ])),
+                    SizedBox(height: 16.h),
+                    Container(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 22.h, horizontal: 20.w),
+                        width: ScreenUtil().screenWidth,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(26),
+                            gradient: LinearGradient(
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                                colors: [
+                                  Color(0xFFEAEAEA),
+                                  Color(0xFFB2D0CE).withOpacity(0.85)
+                                ])),
+                        child: Row(children: [
+                          Container(
+                            padding: EdgeInsets.all(7.w),
+                            width: 32.w,
+                            height: 32.w,
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(12)),
+                            child: Image.asset(
+                              'assets/images/flash.png',
+                            ),
+                          ),
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Account N*3874825',
+                                          style: TextStyle(
+                                              fontSize: 15.sp,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w400)),
+                                      Expanded(
+                                          child: Container(
+                                              alignment: Alignment.centerRight,
+                                              child: Text('$_usdSymbol 78,92',
+                                                  style: TextStyle(
+                                                      fontSize: 15.sp,
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w400)))),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text('Expires 12/22/2023',
+                                          style: TextStyle(
+                                              fontSize: 12.sp,
+                                              color: const Color(0xFF79767D),
+                                              fontWeight: FontWeight.w400)),
+                                      Expanded(
+                                          child: Container(
+                                              alignment: Alignment.centerRight,
+                                              child: Text('Rate 3.5%',
+                                                  style: TextStyle(
+                                                      fontSize: 12.sp,
+                                                      color: const Color(
+                                                          0xFF79767D),
+                                                      fontWeight:
+                                                          FontWeight.w400)))),
+                                    ],
+                                  )
+                                ]),
+                          )
+                        ])),
+                    SizedBox(height: 36.h),
+                    Row(children: [
+                      Icon(Icons.expand_more,
+                          size: 11.w, color: const Color(0xFF79767D)),
+                      SizedBox(width: 10.w),
+                      Text('Currencies and metals'.toUpperCase(),
+                          style:
+                              TextStyle(fontSize: 10.sp, color: Colors.white)),
+                    ]),
+                    SizedBox(height: 11.h),
+                    Container(
+                        padding: EdgeInsets.all(20.w),
+                        width: ScreenUtil().screenWidth,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(26),
+                        ),
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Flexible(
+                                  flex: 5,
+                                  fit: FlexFit.tight,
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Currencie',
+                                            style: TextStyle(
+                                                fontSize: 12.sp,
+                                                color:
+                                                    const Color(0xFF79767D))),
+                                        SizedBox(height: 14.h),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              margin:
+                                                  EdgeInsets.only(right: 12.w),
+                                              padding: EdgeInsets.all(5),
+                                              width: 20.w,
+                                              height: 20.w,
+                                              decoration: BoxDecoration(
+                                                  color: Color(0xFFB2D0CE)
+                                                      .withOpacity(0.85),
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              child: Image.asset(
+                                                  'assets/images/usd_symbol.png'),
+                                            ),
+                                            Container(
+                                              height: 20.w,
+                                              alignment: Alignment.bottomCenter,
+                                              child: Text('USD',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 15.sp)),
+                                            )
+                                          ],
+                                        ),
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(
+                                                  top: 8.h, right: 12.w),
+                                              padding: EdgeInsets.all(5),
+                                              width: 20.w,
+                                              height: 20.w,
+                                              decoration: BoxDecoration(
+                                                  color: Color(0xFFB2D0CE)
+                                                      .withOpacity(0.85),
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              child: Image.asset(
+                                                  'assets/images/eur_symbol.png'),
+                                            ),
+                                            Container(
+                                              height: 20.w,
+                                              alignment: Alignment.bottomCenter,
+                                              child: Text('EUR',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 15.sp)),
+                                            )
+                                          ],
+                                        ),
+                                      ])),
+                              Flexible(
+                                  flex: 2,
+                                  fit: FlexFit.tight,
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text('Buy',
+                                            style: TextStyle(
+                                                fontSize: 12.sp,
+                                                color:
+                                                    const Color(0xFF79767D))),
+                                        SizedBox(height: 14.h),
+                                        Text('$_usdSymbol 78,92',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15.sp)),
+                                        SizedBox(height: 8.h),
+                                        Text('$_usdSymbol 78,92',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15.sp)),
+                                        SizedBox(height: 8.h)
+                                      ])),
+                              Flexible(
+                                  flex: 2,
+                                  fit: FlexFit.tight,
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text('Sell',
+                                            style: TextStyle(
+                                                fontSize: 12.sp,
+                                                color:
+                                                    const Color(0xFF79767D))),
+                                        SizedBox(height: 14.h),
+                                        Text('$_usdSymbol 78,92',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15.sp)),
+                                        SizedBox(height: 8.h),
+                                        Text('$_usdSymbol 78,92',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15.sp)),
+                                        SizedBox(height: 8.h)
+                                      ])),
+                            ]))
+                  ]),
             )
           ])),
     );
