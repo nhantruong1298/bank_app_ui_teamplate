@@ -22,8 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
   var _debugMode = false.obs;
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     return Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
             backgroundColor: Colors.black,
             leading: Obx(() => _debugMode.value
