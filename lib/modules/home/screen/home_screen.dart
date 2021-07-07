@@ -1,5 +1,5 @@
 import 'package:bank_app/modules/auth/screen/auth_screen.dart';
-import 'package:bank_app/modules/card/screen/card_screen.dart';
+import 'package:bank_app/modules/card/screen/your_card_screen.dart';
 import 'package:bank_app/modules/chat/screen/chat_screen.dart';
 import 'package:bank_app/modules/history/screen/history_screen.dart';
 import 'package:bank_app/modules/home/screen/home_page.dart';
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               HomePage(),
               ShopScreen(),
-              CardScreen(),
+              YourCardScreen(),
               ChatScreen(),
               HistoryScreen(),
               AuthScreen()
