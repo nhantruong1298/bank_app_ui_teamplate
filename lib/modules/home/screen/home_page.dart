@@ -18,7 +18,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: Container(
+      //physics: const BouncingScrollPhysics(),
+      child: SizedBox(
           width: size.width,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -43,9 +44,9 @@ class _HomePageState extends State<HomePage> {
                       begin: Alignment.bottomLeft,
                       end: Alignment.topRight,
                       colors: [
-                        Color(0xFF252525).withOpacity(0.9),
+                        Color(0xFF252525),
                         Colors.black54,
-                        Color(0xFF252525).withOpacity(0.9),
+                        Color(0xFF252525),
                       ]),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),

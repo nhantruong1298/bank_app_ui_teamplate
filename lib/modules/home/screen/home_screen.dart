@@ -1,10 +1,10 @@
 import 'package:bank_app/modules/auth/screen/auth_screen.dart';
+import 'package:bank_app/modules/budget/screen/budget_screen.dart';
 import 'package:bank_app/modules/card/screen/your_card_screen.dart';
 import 'package:bank_app/modules/chat/screen/chat_screen.dart';
 import 'package:bank_app/modules/history/screen/history_screen.dart';
 import 'package:bank_app/modules/home/screen/home_page.dart';
 import 'package:bank_app/modules/home/widgets/custom_navigationbar.dart';
-import 'package:bank_app/modules/shop/screen/shop_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
             index: _currentIndex.value,
             children: [
               HomePage(),
-              ShopScreen(),
+              BudgetScreen(),
               YourCardScreen(),
               ChatScreen(),
               HistoryScreen(),

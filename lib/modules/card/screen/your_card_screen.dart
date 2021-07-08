@@ -1,7 +1,8 @@
+import 'package:bank_app/modules/card/widgets/detail_card.dart';
+import 'package:bank_app/modules/card/widgets/filter_card.dart';
 import 'package:bank_app/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class YourCardScreen extends StatefulWidget {
   const YourCardScreen({Key? key}) : super(key: key);
@@ -11,125 +12,237 @@ class YourCardScreen extends StatefulWidget {
 }
 
 class _YourCardScreenState extends State<YourCardScreen> {
-  final _screenSize = ScreenUtil();
-  final Widget _rowLens = Row(
-    children: [
-      Icon(Icons.lens, size: 10, color: Colors.black),
-      Icon(Icons.lens, size: 10, color: Colors.black),
-      Icon(Icons.lens, size: 10, color: Colors.black),
-      Icon(Icons.lens, size: 10, color: Colors.black)
-    ],
-  );
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          centerTitle: true,
-          // leading: Container(
-          //   width: 25.r,
-          //   height: 25.r,
-          //   color: Colors.red,
-          //   child: MaterialButton(
-          //     shape: CircleBorder(),
-          //     color: Color(0xFF252525),
-          //     child: Icon(
-          //       Icons.navigate_before,
-          //       color: Colors.white,
-          //     ),
-          //     onPressed: () {},
-          //   ),
-          // ),
-          title: Text('Your cards',
-              style:
-                  TextStyle(fontSize: 16.sp, color: const Color(0xFFFFFFFF))),
-        ),
-        body: SafeArea(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            SizedBox(height: 24.h),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 32.w),
-              width: _screenSize.screenWidth,
-              padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(26),
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [Color(0xFFF5FFA8), Color(0xFFEDFC74)])),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                            width: 40.w,
-                            height: 30.h,
-                            child: Image.asset('assets/images/logo_visa.png',
-                                fit: BoxFit.contain)),
-                        Expanded(
-                            child: Container(
-                          alignment: Alignment.centerRight,
-                          child: Text('${Utils.usdSymbol} 5,5566.55',
-                              style: TextStyle(
-                                  color: Color(0xFF272A32),
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.bold)),
-                        ))
-                      ],
-                    ),
-                    SizedBox(height: 35.h),
-                    Row(children: [
-                      Container(
-                        width: 20.w,
-                        height: 30.h,
-                        child: Image.asset('assets/images/chip.png'),
-                      ),
-                      Expanded(
-                          child: Container(
-                              alignment: Alignment.bottomRight,
-                              child: Text('valid thru'.toUpperCase(),
-                                  style: TextStyle(
-                                      color: Color(0xFF272A32).withOpacity(0.4),
-                                      fontSize: 10.sp))))
-                    ]),
-                    Row(children: [
-                      _rowLens,
-                      const SizedBox(width: 5),
-                      _rowLens,
-                      const SizedBox(width: 5),
-                      _rowLens,
-                      const SizedBox(width: 5),
-                      Text('4552',
-                          style: TextStyle(
-                              color: Color(0xFF272A32),
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.bold)),
-                      Expanded(
-                          child: Container(
+        body: SingleChildScrollView(
+          child: SizedBox(
+            height: ScreenUtil().screenHeight,
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              SizedBox(height: 24.h),
+              const DetailCard(),
+              SizedBox(height: 80.h),
+              Expanded(
+                child: Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 22.w, vertical: 35.h),
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                            colors: [
+                              Color(0xFF252525),
+                              Colors.black54,
+                              Color(0xFF252525),
+                            ]),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30),
+                        )),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(children: [
+                            Text('Transactions',
+                                style: TextStyle(
+                                  fontSize: 21.sp,
+                                  color: Colors.white,
+                                )),
+                            Expanded(
+                                child: Container(
                               alignment: Alignment.centerRight,
-                              child: Text('12/22',
+                              child: Container(
+                                height: 34.h,
+                                width: 82.w,
+                                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(40)),
+                                child: InkWell(
+                                  onTap: showFilter,
+                                  child: Row(children: [
+                                    Text('Filter',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14.sp,
+                                        )),
+                                    const SizedBox(width: 5),
+                                    Icon(Icons.expand_more,
+                                        size: 14.sp, color: Colors.white)
+                                  ]),
+                                ),
+                              ),
+                            ))
+                          ]),
+                          SizedBox(height: 24.h),
+                          Text('Today',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14.sp,
+                              )),
+                          SizedBox(height: 17.h),
+                          Row(children: [
+                            Container(
+                              width: 32.r,
+                              height: 32.r,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFF2FE8D),
+                                  shape: BoxShape.circle),
+                              child: Icon(Icons.vertical_align_bottom,
+                                  color: Colors.black, size: 16.w),
+                            ),
+                            SizedBox(width: 16.w),
+                            Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Transfer',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w500)),
+                                  Text('Incoming transfer',
+                                      style: TextStyle(
+                                          color: Color(0xFF79767D),
+                                          fontSize: 14.sp))
+                                ]),
+                            Expanded(
+                                child: Container(
+                              alignment: Alignment.centerRight,
+                              child: Text('+ ${Utils.usdSymbol}3,110',
                                   style: TextStyle(
-                                      color: Color(0xFF272A32),
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.bold))))
-                    ]),
-                    SizedBox(height: 20.h),
-                    Text('Margo Lepski'.toUpperCase(),
-                        style: TextStyle(
-                            color: Color(0xFF272A32).withOpacity(0.4),
-                            fontSize: 10.sp))
-                  ]),
-            ),
-            SizedBox(height: 80.h)
-          ]),
+                                      color: Colors.white,
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w500)),
+                            ))
+                          ]),
+                          SizedBox(height: 20.h),
+                          Row(children: [
+                            Container(
+                              width: 32.r,
+                              height: 32.r,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFB2D0CE),
+                                  shape: BoxShape.circle),
+                              child: Icon(Icons.vertical_align_top,
+                                  color: Colors.black, size: 16.w),
+                            ),
+                            SizedBox(width: 16.w),
+                            Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Health',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w500)),
+                                  Text('Pharmacy',
+                                      style: TextStyle(
+                                          color: Color(0xFF79767D),
+                                          fontSize: 14.sp))
+                                ]),
+                            Expanded(
+                                child: Container(
+                              alignment: Alignment.centerRight,
+                              child: Text('- ${Utils.usdSymbol}312,9',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w500)),
+                            ))
+                          ]),
+                          SizedBox(height: 35.h),
+                          //////////////////////June 13TH
+                          Text('June 13th',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14.sp,
+                              )),
+                          SizedBox(height: 17.h),
+                          Row(children: [
+                            Container(
+                              width: 32.r,
+                              height: 32.r,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFF2FE8D),
+                                  shape: BoxShape.circle),
+                              child: Icon(Icons.vertical_align_bottom,
+                                  color: Colors.black, size: 16.w),
+                            ),
+                            SizedBox(width: 16.w),
+                            Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Transfer',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w500)),
+                                  Text('Incoming transfer',
+                                      style: TextStyle(
+                                          color: Color(0xFF79767D),
+                                          fontSize: 14.sp))
+                                ]),
+                            Expanded(
+                                child: Container(
+                              alignment: Alignment.centerRight,
+                              child: Text('+ ${Utils.usdSymbol}3,110',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w500)),
+                            ))
+                          ]),
+                          SizedBox(height: 20.h),
+                          Row(children: [
+                            Container(
+                              width: 32.r,
+                              height: 32.r,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFB2D0CE),
+                                  shape: BoxShape.circle),
+                              child: Icon(Icons.vertical_align_top,
+                                  color: Colors.black, size: 16.w),
+                            ),
+                            SizedBox(width: 16.w),
+                            Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Health',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w500)),
+                                  Text('Pharmacy',
+                                      style: TextStyle(
+                                          color: Color(0xFF79767D),
+                                          fontSize: 14.sp))
+                                ]),
+                            Expanded(
+                                child: Container(
+                              alignment: Alignment.centerRight,
+                              child: Text('- ${Utils.usdSymbol}312,9',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w500)),
+                            ))
+                          ]),
+                        ])),
+              )
+            ]),
+          ),
         ));
+  }
+
+  void showFilter() {
+    showModalBottomSheet(
+        context: context,
+        barrierColor: Colors.black.withOpacity(0.8),
+        backgroundColor: Colors.transparent,
+        builder: (_) {
+          return FilterCard();
+        });
   }
 }
