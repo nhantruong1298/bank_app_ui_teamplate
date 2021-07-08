@@ -3,8 +3,11 @@ import 'package:bank_app/modules/budget/screen/budget_screen.dart';
 import 'package:bank_app/modules/card/screen/your_card_screen.dart';
 import 'package:bank_app/modules/chat/screen/chat_screen.dart';
 import 'package:bank_app/modules/history/screen/history_screen.dart';
+import 'package:bank_app/modules/home/bloc/change_page_bloc.dart';
+import 'package:bank_app/modules/home/bloc/change_page_event.dart';
 import 'package:bank_app/modules/home/screen/home_page.dart';
 import 'package:bank_app/modules/home/widgets/custom_navigationbar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onChangedIndex: (newIndex) {
           if (_isDemoMode) {
             _currentIndex.value = newIndex;
+            BlocProvider.of<ChangePageBloc>(context).add(ChangePage(newIndex));
           } else {
             showBottom(newIndex);
           }
@@ -62,6 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Get.back();
                 _isDemoMode = true;
                 _currentIndex.value = index;
+                BlocProvider.of<ChangePageBloc>(context).add(ChangePage(index));
                 widget.updateAppBar();
               },
               child: Container(

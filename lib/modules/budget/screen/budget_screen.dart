@@ -1,3 +1,4 @@
+import 'package:bank_app/modules/budget/widgets/line_chart_data.dart';
 import 'package:bank_app/utils/utils.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -15,13 +16,12 @@ class _BudgetScreenState extends State<BudgetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF433D48).withOpacity(0.4),
-      body: SafeArea(
-          child: SingleChildScrollView(
+      backgroundColor: const Color(0xFF433D48).withOpacity(0.22),
+      body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
             width: _screenUtil.screenWidth,
             decoration: BoxDecoration(
                 color: Colors.black, borderRadius: BorderRadius.circular(30)),
@@ -46,92 +46,161 @@ class _BudgetScreenState extends State<BudgetScreen> {
             ]),
           ),
           SizedBox(height: 54.h),
-          Container(
+          SizedBox(
             width: _screenUtil.screenWidth,
             height: 250.h,
             child: LineChart(lineChartData()),
-          )
+          ),
+          SizedBox(height: 70.h),
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 22.h),
+              decoration: BoxDecoration(
+                  color: Color(0xFF282729).withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(26)),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('June 15, 2020',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 21.sp)),
+                    SizedBox(height: 24.h),
+                    Row(children: [
+                      Image.asset(
+                        'assets/images/webflow.png',
+                        width: 32.r,
+                        height: 32.r,
+                      ),
+                      SizedBox(width: 16.w),
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Webflow',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16.sp)),
+                            const SizedBox(height: 3),
+                            Text('Outcoming transfer',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14.sp,
+                                    color: Color(0xFF79767D)))
+                          ]),
+                      Expanded(
+                          child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text('- ${Utils.usdSymbol}45',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16.sp)),
+                      ))
+                    ]),
+                    SizedBox(height: 20.h),
+                    Row(children: [
+                      Image.asset(
+                        'assets/images/sketch.png',
+                        width: 32.r,
+                        height: 32.r,
+                      ),
+                      SizedBox(width: 16.w),
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Sketch',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16.sp)),
+                            const SizedBox(height: 3),
+                            Text('Annual withdrawal of funds',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14.sp,
+                                    color: Color(0xFF79767D)))
+                          ]),
+                      Expanded(
+                          child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text('- ${Utils.usdSymbol}79',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16.sp)),
+                      ))
+                    ]),
+                    SizedBox(height: 20.h),
+                    Row(children: [
+                      Image.asset(
+                        'assets/images/youtube.png',
+                        width: 32.r,
+                        height: 32.r,
+                      ),
+                      SizedBox(width: 16.w),
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Youtube',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16.sp)),
+                            const SizedBox(height: 3),
+                            Text('Annual withdrawal of funds',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14.sp,
+                                    color: Color(0xFF79767D)))
+                          ]),
+                      Expanded(
+                          child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text('- ${Utils.usdSymbol}15',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16.sp)),
+                      ))
+                    ]),
+                    SizedBox(height: 20.h),
+                    Row(children: [
+                      Image.asset(
+                        'assets/images/unplash.png',
+                        width: 32.r,
+                        height: 32.r,
+                      ),
+                      SizedBox(width: 16.w),
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Unplash',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16.sp)),
+                            const SizedBox(height: 3),
+                            Text('Annual withdrawal of funds',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14.sp,
+                                    color: Color(0xFF79767D)))
+                          ]),
+                      Expanded(
+                          child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text('- ${Utils.usdSymbol}9',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16.sp)),
+                      ))
+                    ]),
+                  ])),
+          SizedBox(height: 20.h)
         ]),
-      )),
+      ),
     );
   }
-
-  LineChartData lineChartData() {
-    return LineChartData(
-      gridData: FlGridData(
-        show: false,
-        drawVerticalLine: false,
-      ),
-      lineTouchData: LineTouchData(
-          enabled: true,
-          touchTooltipData: LineTouchTooltipData(
-              tooltipBgColor: Color(0xFFB2D0CE).withOpacity(0.5),
-              tooltipRoundedRadius: 8,
-              tooltipPadding: EdgeInsets.all(5),
-              getTooltipItems: (value) {
-                return [
-                  LineTooltipItem('-${Utils.usdSymbol}1,345\n JUNE 15,2020',
-                      TextStyle(color: Colors.black, fontSize: 12.sp))
-                ];
-              })),
-      titlesData: FlTitlesData(
-        leftTitles: SideTitles(showTitles: false),
-        bottomTitles: SideTitles(
-          showTitles: true,
-          reservedSize: 22,
-          getTextStyles: (value) =>
-              TextStyle(color: Color(0xff68737d), fontSize: 13.sp),
-          getTitles: (value) {
-            switch (value.toInt()) {
-              case 0:
-                return 'Jul';
-              case 2:
-                return 'May';
-              case 5:
-                return 'Jun';
-              case 8:
-                return 'Jul';
-              case 10:
-                return 'May';
-            }
-            return '';
-          },
-        ),
-      ),
-      borderData: FlBorderData(
-        show: false,
-      ),
-      minX: 0,
-      maxX: 11,
-      minY: 0,
-      maxY: 6,
-      lineBarsData: [
-        LineChartBarData(
-          spots: [
-            FlSpot(0, 3),
-            FlSpot(2.6, 2),
-            FlSpot(4.9, 5),
-            FlSpot(6.8, 3.1),
-            FlSpot(8, 4),
-            FlSpot(9.5, 3),
-            FlSpot(11, 4),
-          ],
-          isCurved: true,
-          colors: gradientColors,
-          barWidth: 1,
-          isStrokeCapRound: true,
-          dotData: FlDotData(
-            show: false,
-          ),
-          belowBarData: BarAreaData(
-            show: true,
-            colors:
-                gradientColors.map((color) => color.withOpacity(0.1)).toList(),
-          ),
-        ),
-      ],
-    );
-  }
-
-  List<Color> gradientColors = [const Color(0xFFB2D0CE)];
 }

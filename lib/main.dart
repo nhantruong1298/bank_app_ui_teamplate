@@ -1,10 +1,14 @@
+import 'package:bank_app/modules/home/bloc/change_page_bloc.dart';
 import 'package:bank_app/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' hide Transition;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(create: (BuildContext context) => ChangePageBloc(-1))
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
