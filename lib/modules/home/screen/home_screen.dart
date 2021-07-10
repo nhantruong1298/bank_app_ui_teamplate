@@ -1,7 +1,7 @@
 import 'package:bank_app/modules/auth/screen/auth_screen.dart';
 import 'package:bank_app/modules/budget/screen/budget_screen.dart';
 import 'package:bank_app/modules/card/screen/your_card_screen.dart';
-import 'package:bank_app/modules/chat/screen/chat_screen.dart';
+import 'package:bank_app/modules/message/screen/message_main.dart';
 import 'package:bank_app/modules/history/screen/history_screen.dart';
 import 'package:bank_app/modules/home/bloc/change_page_bloc.dart';
 import 'package:bank_app/modules/home/bloc/change_page_event.dart';
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
               HomePage(),
               BudgetScreen(),
               YourCardScreen(),
-              ChatScreen(),
+              MessageMain(),
               HistoryScreen(),
               AuthScreen()
             ],

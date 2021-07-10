@@ -1,6 +1,7 @@
 import 'package:bank_app/modules/card/widgets/detail_card.dart';
 import 'package:bank_app/modules/card/widgets/filter_card.dart';
 import 'package:bank_app/utils/utils.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -90,8 +91,8 @@ class _YourCardScreenState extends State<YourCardScreen> {
                               decoration: BoxDecoration(
                                   color: Color(0xFFF2FE8D),
                                   shape: BoxShape.circle),
-                              child: Icon(Icons.vertical_align_bottom,
-                                  color: Colors.black, size: 16.w),
+                              child: Icon(CupertinoIcons.arrow_down_to_line_alt,
+                                  color: Colors.black, size: 13.w),
                             ),
                             SizedBox(width: 16.w),
                             Column(
@@ -125,8 +126,8 @@ class _YourCardScreenState extends State<YourCardScreen> {
                               decoration: BoxDecoration(
                                   color: Color(0xFFB2D0CE),
                                   shape: BoxShape.circle),
-                              child: Icon(Icons.vertical_align_top,
-                                  color: Colors.black, size: 16.w),
+                              child: Icon(CupertinoIcons.arrow_up_to_line_alt,
+                                  color: Colors.black, size: 13.w),
                             ),
                             SizedBox(width: 16.w),
                             Column(
@@ -167,8 +168,8 @@ class _YourCardScreenState extends State<YourCardScreen> {
                               decoration: BoxDecoration(
                                   color: Color(0xFFF2FE8D),
                                   shape: BoxShape.circle),
-                              child: Icon(Icons.vertical_align_bottom,
-                                  color: Colors.black, size: 16.w),
+                              child: Icon(CupertinoIcons.arrow_down_to_line_alt,
+                                  color: Colors.black, size: 13.w),
                             ),
                             SizedBox(width: 16.w),
                             Column(
@@ -202,8 +203,8 @@ class _YourCardScreenState extends State<YourCardScreen> {
                               decoration: BoxDecoration(
                                   color: Color(0xFFB2D0CE),
                                   shape: BoxShape.circle),
-                              child: Icon(Icons.vertical_align_top,
-                                  color: Colors.black, size: 16.w),
+                              child: Icon(CupertinoIcons.arrow_up_to_line_alt,
+                                  color: Colors.black, size: 13.w),
                             ),
                             SizedBox(width: 16.w),
                             Column(

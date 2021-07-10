@@ -17,9 +17,12 @@ class FinanceItem extends StatelessWidget {
       width: 100.w,
       height: 100.w,
       decoration: BoxDecoration(
-        color: const Color(0xFF363339),
-        borderRadius: BorderRadius.circular(26),
-      ),
+          //color: const Color(0xFF363339),
+          borderRadius: BorderRadius.circular(26),
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [const Color(0xFF252525), const Color(0xFF2C2C2C)])),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
